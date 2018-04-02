@@ -1,0 +1,3 @@
+debian/manpages/radiusd.1
+debian/manpages/radius.conf.5
+debian/manpages/radius-cli.1

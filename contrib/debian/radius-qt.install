@@ -1,0 +1,6 @@
+usr/local/bin/radius-qt usr/bin
+share/pixmaps/radius32.xpm usr/share/pixmaps
+share/pixmaps/radius16.xpm usr/share/pixmaps
+share/pixmaps/radius128.png usr/share/pixmaps
+debian/radius-qt.desktop usr/share/applications
+debian/radius-qt.protocol usr/share/kde4/services/

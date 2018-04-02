@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Radius
+Comment=Radius P2P Cryptocurrency
+Comment[fr]=Radius, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=Radius, eşten eşe kriptografik sanal para birimi
+Exec=radius-qt %u
+Terminal=false
+Type=Application
+Icon=radius128
+MimeType=x-scheme-handler/radius;
+Categories=Office;Finance;

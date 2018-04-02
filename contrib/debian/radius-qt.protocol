@@ -1,0 +1,11 @@
+[Protocol]
+exec=radius-qt '%u'
+protocol=radius
+input=none
+output=none
+helper=true
+listing=
+reading=false
+writing=false
+makedir=false
+deleting=false
