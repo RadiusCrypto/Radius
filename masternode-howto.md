@@ -27,7 +27,7 @@ masternode genkey
 Use your Terminal to enter this command: 
 
 ```
-# radius-cli masternode genkey
+# ~/bin/radius-cli masternode genkey
 ```
 
 The result will look something like this: 
@@ -41,7 +41,7 @@ WV0wX2hjrVVuPPxhVVVZ2DPB3tJ0x03deadbeefc0ff33EvxKY
 
 #### Windows or GUI Wallet
 + Create a new address
-+ Send 1000 RADIUS to that address (make sure it is the right one! Double check it!)
++ Send **1000 RADIUS** to that address (make sure it is the right one! Double check it!)
 + In the GUI debug console, enter this command:
 
 ```
@@ -51,11 +51,11 @@ masternode outputs
 #### CLI-Interface on Linux, OSX
 
 ```
-# radius-cli getnewaddress
+# ~/bin/radius-cli getnewaddress
 RUxvG3Ya7jboRHbg1XGe4MWXPjJoVHLUBz
-# radius-cli sendtoaddress RUxvG3Ya7jboRHbg1XGe4MWXPjJoVHLUBz 1000
+# ~/bin/radius-cli sendtoaddress RUxvG3Ya7jboRHbg1XGe4MWXPjJoVHLUBz 1000
 51a26de5f655a81b730463e236aefef24152b053df0f5453099032cf471743bc
-# radius-cli masternode outputs
+# ~/bin/radius-cli masternode outputs
 ```
 
 The result will look like this: 
@@ -153,7 +153,7 @@ addnode=199.247.10.115
 Hit `Ctrl+x`, then select save. Start the MN Radius server: 
 
 ```
-# radiusd -daemon
+# ~/bin/radiusd -daemon
 ```
 
 If you want to, you can watch the logfile for errors by entering this command: 
@@ -191,7 +191,7 @@ masternode start-alias mn1
 #### CLI-Interface, Linux or OSX
 
 ```
-# radius-cli masternode start-alias mn1
+# ~/bin/radius-cli masternode start-alias mn1
 ```
 
 The result should look like this: 
@@ -214,7 +214,7 @@ masternode status
 #### CLI-Interface, Linux or OSX
 
 ```
-# radius-cli masternode status
+# ~/bin/radius-cli masternode status
 ```
 
 The result should look like this with different values: 
@@ -228,5 +228,5 @@ The result should look like this with different values:
 }
 ```
 
-If it does not, restart the MN server wallet and your local wallet, and it should work.
+If it does not, double check all the values you have configued above. If there is no error, restart the MN server wallet and your local wallet, and it should work.
 
