@@ -27,7 +27,7 @@ masternode genkey
 Use your Terminal to enter this command: 
 
 ```
-# ~/bin/radius-cli masternode genkey
+# radius-cli masternode genkey
 ```
 
 The result will look something like this: 
@@ -51,11 +51,11 @@ masternode outputs
 #### CLI-Interface on Linux, OSX
 
 ```
-# ~/bin/radius-cli getnewaddress
+# radius-cli getnewaddress
 RUxvG3Ya7jboRHbg1XGe4MWXPjJoVHLUBz
-# ~/bin/radius-cli sendtoaddress RUxvG3Ya7jboRHbg1XGe4MWXPjJoVHLUBz 1000
+# radius-cli sendtoaddress RUxvG3Ya7jboRHbg1XGe4MWXPjJoVHLUBz 1000
 51a26de5f655a81b730463e236aefef24152b053df0f5453099032cf471743bc
-# ~/bin/radius-cli masternode outputs
+# radius-cli masternode outputs
 ```
 
 The result will look like this: 
@@ -191,7 +191,7 @@ masternode start-alias mn1
 #### CLI-Interface, Linux or OSX
 
 ```
-# ~/bin/radius-cli masternode start-alias mn1
+# radius-cli masternode start-alias mn1
 ```
 
 The result should look like this: 
@@ -203,7 +203,7 @@ The result should look like this:
 }
 ```
 
-Verify that the masternode has indeed started successfully by executing this command against the local wallet:
+Verify that the masternode has indeed started successfully by executing this command the Masternode server:
 
 #### GUI Wallet Debug Console, Windows
 
