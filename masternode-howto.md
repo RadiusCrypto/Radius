@@ -8,7 +8,7 @@ This guide will show you how to setup and enable a Radius Masternode. For simpli
 + Your local ("every day") wallet, can be Windows, Linux.
 + Your Masternode VPS or dedicated server.
 	+ It needs to have a public, static IPv4 address.
-	+ Port 4090/tcp must be open to the internet
+	+ Port `4090/tcp` must be open to the internet
 	+ You can only host one MN per IPv4 address.
 
 ## Instructions
@@ -41,7 +41,7 @@ WV0wX2hjrVVuPPxhVVVZ2DPB3tJ0x03deadbeefc0ff33EvxKY
 
 #### Windows or GUI Wallet
 + Create a new address
-+ Send 1000 RADIUS to that address (make sure it is the right one!)
++ Send 1000 RADIUS to that address (make sure it is the right one! Double check it!)
 + In the GUI debug console, enter this command:
 
 ```
@@ -129,7 +129,7 @@ We will have to adapt the Radius configuration file.
 # nano ~/.radiuscore/radius.conf
 ```
 
-Put in the values below, adapt the rpcuser, rpcpassword, masternodeprivkey and externalip lines. rpcuser and rpcpassword can be chosen freely, having a superduper complex password is not overly important here, as that part of the server will only be available when connecting from the host it is running on (via loopback). Set masternodeprivkey= to the key we have generated before.
+Put in the values below, adapt the `rpcuser`, `rpcpassword`, `masternodeprivkey` and `externalip` values. `rpcuser` and `rpcpassword` can be chosen freely, having a superduper complex password is not overly important here, as that part of the server ('the RPC interface') will only be available when connecting from the host it is running on (via loopback). Set `masternodeprivkey` to the key we have generated before.
 
 ```
 txindex=1
@@ -149,7 +149,7 @@ addnode=199.247.21.30
 addnode=199.247.10.115
 ```
 
-Hit Ctrl+x, then select save. Start the MN Radius server: 
+Hit `Ctrl+x`, then select save. Start the MN Radius server: 
 
 ```
 # radiusd -daemon
@@ -161,19 +161,17 @@ If you want to, you can watch the logfile for errors by entering this command:
 # tail -f ~/.radiuscore/debug.log
 ```
 
-Press `Ctrl-C` to exit the log display.
+Press `Ctrl-c` to exit the log display.
 
 ### Setting up your local wallet 
 
-In your local wallets datadir, find a file named 'masternode.conf'. Open it in an editor of your choice, and adapt the alias, IP, masternodeprivkey, collateral_output_txid and collateral_output_index fields.
-
-+ 'alias' is just a name you give to your node.
+In your local wallets datadir, find a file named `masternode.conf`. Open it in an editor of your choice, and adapt the `alias`, `IP`, `masternodeprivkey`, `collateral_output_txid` and `collateral_output_index` fields.
 
 ```
 alias IP:4090 masternodeprivkey collateral_output_txid collateral_output_index
 ```
 
-In our example, using the data we've gathered before, it would look like this: 
+In our example, using the data we've gathered before and `mn1` as the masternode alias, it would look like this: 
 
 ```
 mn1 1.2.3.4:4090 WV0wX2hjrVVuPPxhVVVZ2DPB3tJ0x03deadbeefc0ff33EvxKY 04e91d19e6e6cfd5c73888d72d43467893267821fb3244a65ef0bed102d2166e 1
