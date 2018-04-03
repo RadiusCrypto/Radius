@@ -37,7 +37,7 @@ WV0wX2hjrVVuPPxhVVVZ2DPB3tJ0x03deadbeefc0ff33EvxKY
 ```
 
 ### Collateral transaction
-**NOTE __it is ultra important that you pay good attention here. We cannot help you if you send the collateral to the wrong address. Double and triple check everything before you send the collateral transaction__**
+**NOTE __it is ultra important that you pay good attention here. We cannot help you if you send the collateral to the wrong address. Double and triple check everything before you send the collateral transaction!!!__**
 
 #### Windows or GUI Wallet
 + Create a new address
@@ -65,6 +65,8 @@ The result will look like this:
   "04e91d19e6e6cfd5c73888d72d43467893267821fb3244a65ef0bed102d2166e": "1"
 }
 ```
+
+The first long hex string is the `collateral_output_txid`, the number after is the `collateral_output_index`. We'll refer to that later in the guide.
 
 
 ### Setting up the Masternode Server
@@ -127,15 +129,15 @@ We will have to adapt the Radius configuration file.
 # nano ~/.radiuscore/radius.conf
 ```
 
-Put in the values below, adapt the rpcuser, rpcpassword, masternodeprivkey and externalip lines. rpcuser and rpcpassword can be chosen freely, having a superduper complex password is not overly important here. Set masternodeprivkey= to the key we have generated before.
+Put in the values below, adapt the rpcuser, rpcpassword, masternodeprivkey and externalip lines. rpcuser and rpcpassword can be chosen freely, having a superduper complex password is not overly important here, as that part of the server will only be available when connecting from the host it is running on (via loopback). Set masternodeprivkey= to the key we have generated before.
 
 ```
+txindex=1
 rpcuser=radius-masternode-howto
 rpcpassword=password-for-your-masternode
 rpcallowip=127.0.0.1
 listen=1
 server=1
-daemon=1
 maxconnections=256
 masternode=1
 logtimestamps=1
@@ -147,17 +149,85 @@ addnode=199.247.21.30
 addnode=199.247.10.115
 ```
 
-Hit Ctrl+x, then select save.
+Hit Ctrl+x, then select save. Start the MN Radius server: 
 
-Now edit your masternode.conf at your windows wallet
+```
+# radiusd -daemon
+```
 
+If you want to, you can watch the logfile for errors by entering this command: 
+
+```
+# tail -f ~/.radiuscore/debug.log
+```
+
+Press `Ctrl-C` to exit the log display.
+
+### Setting up your local wallet 
+
+In your local wallets datadir, find a file named 'masternode.conf'. Open it in an editor of your choice, and adapt the alias, IP, masternodeprivkey, collateral_output_txid and collateral_output_index fields.
+
++ 'alias' is just a name you give to your node.
+
+```
 alias IP:4090 masternodeprivkey collateral_output_txid collateral_output_index
+```
 
-Restart windows wallet
+In our example, using the data we've gathered before, it would look like this: 
 
-Go to your vps and type ‘’./radiusd’’
+```
+mn1 1.2.3.4:4090 WV0wX2hjrVVuPPxhVVVZ2DPB3tJ0x03deadbeefc0ff33EvxKY 04e91d19e6e6cfd5c73888d72d43467893267821fb3244a65ef0bed102d2166e 1
+```
 
-Now start your masternode at your windows wallet
+Save and exit the editor. Restart your local wallet. 
 
-You set up your masternode
+Now, on your local wallet, start the masternode.  If you have chosen a different alias than `mn1` above, replace it accordingly in the command.
+
+#### GUI Wallet Debug Console, Windows
+
+```
+masternode start-alias mn1
+```
+
+#### CLI-Interface, Linux or OSX
+
+```
+# radius-cli masternode start-alias mn1
+```
+
+The result should look like this: 
+
+```
+{
+  "alias": "mn1",
+  "result": "successful"
+}
+```
+
+Verify that the masternode has indeed started successfully by executing this command against the local wallet:
+
+#### GUI Wallet Debug Console, Windows
+
+```
+masternode status
+```
+
+#### CLI-Interface, Linux or OSX
+
+```
+# radius-cli masternode status
+```
+
+The result should look like this with different values: 
+
+```
+{
+  "outpoint": "04e91d19e6e6cfd5c73888d72d43467893267821fb3244a65ef0bed102d2166e-1",
+  "service": "1.2.3.4:4090",
+  "payee": "RDqEkeLJetSfpLDvN6ArTnX51PAZFP9vcu",
+  "status": "Masternode successfully started"
+}
+```
+
+If it does not, restart the MN server wallet and your local wallet, and it should work.
 
