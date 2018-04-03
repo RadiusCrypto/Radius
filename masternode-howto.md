@@ -16,14 +16,14 @@ This guide will show you how to setup and enable a Radius Masternode. For simpli
 ### Generate the Private Key for the MN
 This has to be done on your local wallet. Copy the result to a safe place. Do not lose it. We will use it later on.
 
-**Debug console in GUI Wallet, probably Windows**
+#### Debug console in GUI Wallet, probably Windows
 Enter the below command into the debug console of your GUI wallet to create your MN private key"
 
 ```
 masternode genkey
 ```
 
-**CLI-Interface on Linux, OSX**
+#### CLI-Interface on Linux, OSX
 Use your Terminal to enter this command: 
 
 ```
@@ -39,7 +39,7 @@ WV0wX2hjrVVuPPxhVVVZ2DPB3tJ0x03deadbeefc0ff33EvxKY
 ### Collateral transaction
 **NOTE __it is ultra important that you pay good attention here. We cannot help you if you send the collateral to the wrong address. Double and triple check everything before you send the collateral transaction__**
 
-**Windows or GUI Wallet**
+#### Windows or GUI Wallet
 + Create a new address
 + Send 1000 RADIUS to that address (make sure it is the right one!)
 + In the GUI debug console, enter this command:
@@ -48,7 +48,7 @@ WV0wX2hjrVVuPPxhVVVZ2DPB3tJ0x03deadbeefc0ff33EvxKY
 masternode outputs
 ```
 
-**CLI-Interface on Linux, OSX***
+#### CLI-Interface on Linux, OSX
 
 ```
 # radius-cli getnewaddress
