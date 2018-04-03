@@ -73,7 +73,8 @@ The first long hex string is the `collateral_output_txid`, the number after is t
 
 **NOTE:** These instructions are Ubuntu-specific, but should be easily adaptable to other Linux distributions.
 
-```# sudo apt-get -y update && sudo apt-get -y upgrade && sudo apt-get -y dist-upgrade
+```
+# sudo apt-get -y update && sudo apt-get -y upgrade && sudo apt-get -y dist-upgrade
 [lots of output here]
 ```
 
