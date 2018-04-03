@@ -5,7 +5,7 @@ This guide will show you how to setup and enable a Radius Masternode. For simpli
 ## Requirements
 
 + 1000 Radius
-+ Your local ("every day") wallet, can be Windows, Linux.
++ Your local ("every day") wallet, can be Windows, Linux, OSX.
 + Your Masternode VPS or dedicated server.
 	+ It needs to have a public, static IPv4 address.
 	+ Port `4090/tcp` must be open to the internet
