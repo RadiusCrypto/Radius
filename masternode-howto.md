@@ -17,7 +17,7 @@ This guide will show you how to setup and enable a Radius Masternode. For simpli
 This has to be done on your local wallet. Copy the result to a safe place. Do not lose it. We will use it later on.
 
 #### Debug console in GUI Wallet, probably Windows
-Enter the below command into the debug console of your GUI wallet to create your MN private key"
+Enter the below command into the debug console of your GUI wallet to create your MN private key:
 
 ```
 masternode genkey
