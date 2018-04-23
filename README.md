@@ -75,3 +75,10 @@ Translations are periodically pulled from Transifex and merged into the git repo
 pull from Transifex would automatically overwrite them again.
 
 Translators should also follow the [forum](https://www.radius.org/forum/topic/radius-worldwide-collaboration.88/).
+
+Contact + Infos
+---------------
+
+Explorer: http://explorer.radiuscrypto.online
+Github: https://github.com/RadiusCrypto/Radius
+Discord: https://discord.gg/eWjGrKk
