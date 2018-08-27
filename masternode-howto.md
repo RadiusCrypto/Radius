@@ -173,7 +173,7 @@ mn1 1.2.3.4:4090 WV0wX2hjrVVuPPxhVVVZ2DPB3tJ0x03deadbeefc0ff33EvxKY 04e91d19e6e6
 
 Save and exit the editor. Restart your local wallet. 
 
-Now, on your local wallet, start the masternode.  If you have chosen a different alias than `mn1` above, replace it accordingly in the command.
+Now, on your local wallet, start the masternode.  If you have chosen a different alias than `mn1` above, replace it accordingly in the command. **The transaction containing your collateral must have at least 15 confirmations!**
 
 #### GUI Wallet Debug Console, Windows
 
