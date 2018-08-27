@@ -110,16 +110,14 @@ You are now logged in as the user `radius`. Now, clone the Radius GIT repository
 # cd Radius
 # chmod +x autogen.sh share/genbuild.sh
 # ./autogen.sh
-# ./configure --disable-tests --disable-gui-tests --disable-bench --disable-zmq --enable-experimental-asm --with-gui=no
+# ./configure --prefix=/home/radius --disable-tests --disable-gui-tests --disable-bench --disable-zmq --enable-experimental-asm --with-gui=no
 # make
+# make install
+# strip ~/bin/radius*
 ```
 
-Now, do a 'manual install' of the compiled binaries
+Now, prepare a config file for Radius: 
 ```
-# mkdir ~/bin
-# cd ~/Radius
-# cp src/radiusd src/radius-cli src/radius-tx ~/bin
-# strip ~/bin/radius*
 # mkdir ~/.radiuscore
 # touch ~/.radiuscore/radius.conf
 ```
