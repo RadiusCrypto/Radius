@@ -109,6 +109,7 @@ You are now logged in as the user `radius`. Now, clone the Radius GIT repository
 # git clone https://github.com/RadiusCrypto/Radius.git
 [a lot of output]
 # cd Radius
+# chmod +x autogen.sh share/genbuild.sh
 # ./autogen.sh
 # ./configure --disable-tests --disable-gui-tests --disable-bench --disable-zmq --enable-experimental-asm --with-gui=no
 # make
