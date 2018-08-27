@@ -114,12 +114,7 @@ You are now logged in as the user `radius`. Now, clone the Radius GIT repository
 # make
 # make install
 # strip ~/bin/radius*
-```
-
-Now, prepare a config file for Radius: 
-```
 # mkdir ~/.radiuscore
-# touch ~/.radiuscore/radius.conf
 ```
 
 We will have to adapt the Radius configuration file. 
